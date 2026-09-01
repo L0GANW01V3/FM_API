@@ -50,6 +50,8 @@ function normalizeStation(s) {
     url: clean(s.url_resolved || s.url),
     homepage: clean(s.homepage),
     favicon: clean(s.favicon),
+    latitude: Number.isFinite(Number(s.latitude ?? s.geo_lat)) ? Number(s.latitude ?? s.geo_lat) : null,
+    longitude: Number.isFinite(Number(s.longitude ?? s.geo_long)) ? Number(s.longitude ?? s.geo_long) : null,
     votes: Number(s.votes) || 0,
     lastChecked: clean(s.lastcheckoktime_iso8601 || s.lastchecktime_iso8601),
     source: "Radio-Browser"
