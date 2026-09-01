@@ -35,3 +35,10 @@ The bundled station data is served locally by the API. The API does not need to 
 
 ## Geographic coordinates
 The importer now preserves Radio-Browser `geo_lat` and `geo_long` as `latitude` and `longitude`. After deploying this version, run the importer once to regenerate `data/stations.json` with coordinates.
+
+
+## GlobeWave coordinate support
+Run `node import-radio-browser.js` to rebuild the station database.
+The importer uses exact Radio-Browser station coordinates when available.
+For stations without coordinates, it uses a country centroid and marks `coordinateSource` as `country`.
+Stations with no usable location are marked `coordinateSource: none`.
