@@ -31,3 +31,7 @@ Example:
 `/api/stations?countryCode=IN&q=bollywood&limit=20`
 
 The bundled station data is served locally by the API. The API does not need to call Radio-Browser for each app request.
+
+
+## Geographic coordinates
+The importer now preserves Radio-Browser `geo_lat` and `geo_long` as `latitude` and `longitude`. After deploying this version, run the importer once to regenerate `data/stations.json` with coordinates.
