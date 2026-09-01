@@ -1,0 +1,33 @@
+# World FM API
+
+API-only Node.js service for the Expo/React Native World FM app.
+
+## Render
+- Runtime: Node
+- Build Command: `npm install`
+- Start Command: `npm start`
+- No database or environment variable is required.
+
+## Endpoints
+
+- `GET /api/health`
+- `GET /api/countries`
+- `GET /api/stations`
+- `GET /api/stations/:id`
+
+### Station query parameters
+
+- `q=bollywood`
+- `country=India`
+- `countryCode=IN`
+- `language=English`
+- `codec=MP3`
+- `tag=rock`
+- `sort=name|votes|bitrate`
+- `page=1`
+- `limit=50` (max 200)
+
+Example:
+`/api/stations?countryCode=IN&q=bollywood&limit=20`
+
+The bundled station data is served locally by the API. The API does not need to call Radio-Browser for each app request.
