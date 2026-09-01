@@ -48,7 +48,9 @@ for (let i = 0; i < usable.length; i++) {
           bitrate: s.bitrate || 0,
           url_resolved: s.url_resolved || s.url || "",
           homepage: s.homepage || "",
-          favicon: s.favicon || ""
+          favicon: s.favicon || "",
+          latitude: Number.isFinite(Number(s.geo_lat)) ? Number(s.geo_lat) : null,
+          longitude: Number.isFinite(Number(s.geo_long)) ? Number(s.geo_long) : null
         });
       }
     }
